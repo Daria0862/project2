@@ -3,9 +3,16 @@ import CreateTask from '..modals/createTask'
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
+    const [tastList, setTaskList] = useState([])
 
     const toggle = () => {
         setModal(!modal);
+    }
+
+    const saveTask = (taskObj) => {
+        let tempList = taskList
+        tempList.push(taskObj)
+        setTaskList(tempList)
     }
 
     return (
@@ -15,9 +22,10 @@ const TodoList = () => {
             <button className='btn btn-primary mt-2' onClick={() => setModal(true)}>Create Task</button>
         </div>
         <div className='task-container'>
+            {taskList.map((obj) => <li>{obj.Name}</li>)}
 
         </div>
-        <CreateTask toggle = {toggle} modal = {modal}/>
+        <CreateTask toggle = {toggle} modal = {modal} save = {saveTask}/>
         </>
     );
 };
