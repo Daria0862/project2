@@ -1,24 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const ToDoList = () => {
-    const [modal, setModal] = useState(false);
-
-    const toggle = () => {
-        setModal(!modal);
-
-    }
+const TodoList = () => {
     return (
-        <>
-            <div className = "header text-center">
-                <h3>Motivate ME</h3>
-                <button className = " btn btn-primary mt-2" onClick = {() => setModal(true)}>Create Task</button>
-                </div>
-                <div className = "task-container">
+        <div>
+            <h3>MotivateMe</h3>
+            <button className='btn btn-primary'>Create Task</button>
+        </div>
+    );
+};
 
-                </div>
-                <CreateTask toggle = {toggle} modal = {modal}/>
-            </>
-    )
-
-
-}
+export default TodoList;''
