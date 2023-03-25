@@ -8,7 +8,7 @@ const TodoList = () => {
     useEffect(() => {
         let arr = localStorage.getItem("taskList")
 
-        if(obj){
+        if(arr){
             let obj = JSON.parse(arr)
             setTaskList(obj)
         }
