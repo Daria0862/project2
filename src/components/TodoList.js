@@ -6,6 +6,29 @@ const TodoList = () => {
     const [modal, setModal] = useState(false);
     const [tastList, setTaskList] = useState([])
 
+    const colors = [
+        {
+            primaryColor : "#5D93E1",
+            secondaryColor : "#ECF3FC"
+        },
+        {
+            primaryColor : "#F9D288",
+            secondaryColor : "#FEFAF1"
+        },
+        {
+            primaryColor : "#5DC250",
+            secondaryColor : "#F2FAF1"
+        },
+        {
+            primaryColor : "#F48687",
+            secondaryColor : "#FDF1F1"
+        },
+        {
+            primaryColor : "#B964F7",
+            secondaryColor : "#F3F0FD"
+        }
+    ]
+
     useEffect(() => {
         let arr = localStorage.getItem("taskList")
 
@@ -27,7 +50,7 @@ const TodoList = () => {
         setTaskList(taskList)
         setModal(false)
     }
-
+    
     return (
         <>
         <div className='header text-center'> 
