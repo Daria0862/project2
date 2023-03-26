@@ -31,7 +31,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
         setModal(!modal);
     }
 
-    const updateTask = () => {
+    const updateTask = (obj) => {
         updateListArray(obj, index)
     }
 
