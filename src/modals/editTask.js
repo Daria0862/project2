@@ -9,7 +9,7 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj}) => {
         const {name, value} = e.target
 
         if(name === "taskName"){
-            setTaskName(value)
+            setTastName(value)
         }else{
             setDescription(value)
         }
@@ -17,7 +17,7 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj}) => {
 
 
     useEffect(() => {
-        setTaskName(taskObj.Name)
+        setTastName(taskObj.Name)
     setDescription(taskObj.Description)
     },[])
 
