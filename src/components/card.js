@@ -51,9 +51,10 @@ const Card = ({taskObj, index, deleteTask}) => {
                 <i class = "feather feather-check-square" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}}></i>
                 <i class = "feather feather-edit" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
                 <i class = "feather feather-trash-2" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
-                <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask}/>
+                
             </div>
             </div>
+            <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask} taskObj = {taskObj}/>
         </div>
     );
 };
