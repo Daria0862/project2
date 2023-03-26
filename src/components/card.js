@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({taskObj, index}) => {
+const Card = ({taskObj, index, deleteTask}) => {
     const colors = [
         {
             primaryColor : "#5D93E1",
@@ -23,6 +23,12 @@ const Card = ({taskObj, index}) => {
             secondaryColor : "#F3F0FD"
         }
     ]
+
+    const handleDelete = () => {
+        deleteTask(index)
+    }
+
+
     return (
         <div class = "card-wrapper mr-5">
             <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
@@ -31,8 +37,9 @@ const Card = ({taskObj, index}) => {
             <p className = "mt-3">{taskObj.Description}</p>
 
             <div style={{"position": "absolute", "right" : "20px", "top" : "20px"}}>
-                <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor}}></i>
-                <i class = "faS fa-trash-alt" style={{"color" : colors[index%5].primaryColor}}></i>
+                <i class = "feather feather-check-square" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}}></i>
+                <i class = "feather feather-edit" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}}></i>
+                <i class = "feather feather-trash-2" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
 
             </div>
             </div>
@@ -40,4 +47,4 @@ const Card = ({taskObj, index}) => {
     );
 };
 
-export default card;
+export default Card;

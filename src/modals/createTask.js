@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, MoModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const CreateTaskPopup = ({ modal, toggle, save }) => {
+const CreateTask = ({ modal, toggle, save }) => {
     const [taskName, setTastName] = useState('');
     const [description, setDescription] = useState('');
 
@@ -48,3 +48,4 @@ const CreateTaskPopup = ({ modal, toggle, save }) => {
         </div>
     )
 }
+export default CreateTask;
