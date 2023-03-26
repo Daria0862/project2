@@ -9,7 +9,7 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj}) => {
         const {name, value} = e.target
 
         if(name === "taskName"){
-            setTastName(value)
+            setTaskName(value)
         }else{
             setDescription(value)
         }
@@ -17,15 +17,16 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj}) => {
 
 
     useEffect(() => {
-setTaskName(taskObj.Name)
-setDescription(taskObj.Description)
-    })
+        setTaskName(taskObj.Name)
+    setDescription(taskObj.Description)
+    },[])
 
-    const handleSave = () => {
-        let taskObj = {}
-        taskObj["Name"] = taskName
-        taskObj["Description"] = description
-        updateTask(taskObj)
+    const handleUpdate = (e) => {
+        e.preventDefault();
+        let tempObj = {}
+        tempObj['Name'] = taskName
+        tempObj['Description'] = description
+        updateTask(tempObj)
     }
 
     
@@ -49,7 +50,7 @@ setDescription(taskObj.Description)
                     </form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={handleSave}>Update</Button>{''}
+                    <Button color="primary" onClick={handleUpdate}>Update</Button>{''}
                     <Button color="secondary" onClick={toggle}>Cancel</Button>{''}
                 </ModalFooter>
             </Modal>
