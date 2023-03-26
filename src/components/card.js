@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import EditTask from '../modals/editTask'
 
 const Card = ({taskObj, index, deleteTask}) => {
+    const [modal, setModal] = useState(false);
+
     const colors = [
         {
             primaryColor : "#5D93E1",
@@ -24,6 +27,14 @@ const Card = ({taskObj, index, deleteTask}) => {
         }
     ]
 
+    const toggle = () => {
+        setModal(!modal);
+    }
+
+    const updateTask = () => {
+        //
+    }
+
     const handleDelete = () => {
         deleteTask(index)
     }
@@ -38,9 +49,9 @@ const Card = ({taskObj, index, deleteTask}) => {
 
             <div style={{"position": "absolute", "right" : "20px", "top" : "20px"}}>
                 <i class = "feather feather-check-square" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}}></i>
-                <i class = "feather feather-edit" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}}></i>
+                <i class = "feather feather-edit" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {()}></i>
                 <i class = "feather feather-trash-2" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
-
+                <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask}/>
             </div>
             </div>
         </div>
