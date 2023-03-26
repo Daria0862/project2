@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const EditTask = ({ modal, toggle, updateTask }) => {
+const EditTaskPopup = ({ modal, toggle, updateTask }) => {
     const [taskName, setTastName] = useState('');
     const [description, setDescription] = useState('');
 
@@ -19,7 +19,7 @@ const EditTask = ({ modal, toggle, updateTask }) => {
         let taskObj = {}
         taskObj["Name"] = taskName
         taskObj["Description"] = description
-        save(taskObj)
+        updateTask(taskObj)
     }
 
     return (
