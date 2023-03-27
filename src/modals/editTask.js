@@ -33,7 +33,7 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj}) => {
 
     return (
         <div>
-            <Modal isOpen={modal} toggle={toggle}>
+               <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>Update Task</ModalHeader>
                 <ModalBody>
                     <form>
@@ -50,10 +50,12 @@ const EditTaskPopup = ({ modal, toggle, updateTask, taskObj}) => {
                     </form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={handleUpdate}>Update</Button>{''}
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>{''}
+                    <Button color="primary" onClick={handleUpdate}>Update</Button>
+                    <Button color="secondary" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>
+            {/* <Button color="secondary" onClick={toggle}>Edit</Button> */}
+
         </div>
     )
 }
