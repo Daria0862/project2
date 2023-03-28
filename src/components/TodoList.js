@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { Button } from './button.style';
+import { Button } from './button.style';
 import styled from 'styled-components';
 import CreateTask from '../modals/createTask'
 import Card from './card';
@@ -9,7 +9,6 @@ const TodoList = () => {
     const [taskList, setTaskList] = useState([])
 
     const Button = styled.button`
-
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -93,6 +92,7 @@ const TodoList = () => {
         </>
     );
 };
+
 
 
 export default TodoList;
