@@ -47,10 +47,9 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
                 <span class="card-header" style={{ "background-color": colors[index % 5].secondaryColor, "border-radius": "10px" }}>{taskObj.Name}</span>
                 <p className="mt-3">{taskObj.Description}</p>
 
-                <div style={{ "position": "absolute", "right": "20px", "top": "20px" }}>
-                    <i class="feather feather-check-square" style={{ "color": colors[index % 5].primaryColor, "cursor": "pointer" }}></i>
-                    <i class="feather feather-edit" style={{ "color": colors[index % 5].primaryColor, "cursor": "pointer" }} onClick={() => setModal(true)}></i>
-                    <i class="feather feather-trash-2" style={{ "color": colors[index % 5].primaryColor, "cursor": "pointer" }} onClick={handleDelete}></i>
+                <div style={{ "position": "absolute", "right": "20px", "bottom": "20px" }}>
+                <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
+                <i class="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
 
                 </div>
             </div>
