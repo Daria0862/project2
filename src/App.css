@@ -1,7 +1,8 @@
 .header{
-    height: 210px;
+    height: 250px;
     width: 100%;
-    background-color: blanchedalmond;
+    background-color: #EDD3E4;
+    background-size: cover;
     padding-top: 50px;
 }
 
@@ -38,7 +39,7 @@
 .card-header{
     margin-top: 10px;
     margin-bottom: 10px;
-    max-width: 80px;
+    max-width: 250px;
     height: 30px;
     padding: 1px 1px !important;
     text-align: center;

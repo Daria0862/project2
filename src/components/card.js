@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import EditTask from '../modals/editTask'
 
-const Card = ({taskObj, index, deleteTask, updateListArray}) => {
+const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
     const [modal, setModal] = useState(false);
 
     const colors = [
         {
-            primaryColor : "#5D93E1",
-            secondaryColor : "#ECF3FC"
+            primaryColor: "#E0BBE4",
+            secondaryColor: "#F9F1FA"
         },
         {
-            primaryColor : "#F9D288",
-            secondaryColor : "#FEFAF1"
+            primaryColor: "#957DAD",
+            secondaryColor: "#EAE5EF"
         },
         {
-            primaryColor : "#5DC250",
-            secondaryColor : "#F2FAF1"
+            primaryColor: "#D291BC",
+            secondaryColor: "#F6E9F2"
         },
         {
-            primaryColor : "#F48687",
-            secondaryColor : "#FDF1F1"
+            primaryColor: "#FEC8D8",
+            secondaryColor: "#FFF4F7"
         },
         {
-            primaryColor : "#B964F7",
-            secondaryColor : "#F3F0FD"
+            primaryColor: "#FFDFD3",
+            secondaryColor: "#FFDFD3"
         }
     ]
 
@@ -41,20 +41,19 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
 
 
     return (
-        <div class = "card-wrapper mr-5">
-            <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
-            <div class = "task-holder">
-            <span class = "card-header" style={{"background-color": colors[index%5].secondaryColor, "border-radius": "10px"}}>{taskObj.Name}</span>
-            <p className = "mt-3">{taskObj.Description}</p>
+        <div class="card-wrapper mr-5">
+            <div class="card-top" style={{ "background-color": colors[index % 5].primaryColor }}></div>
+            <div class="task-holder">
+                <span class="card-header" style={{ "background-color": colors[index % 5].secondaryColor, "border-radius": "10px" }}>{taskObj.Name}</span>
+                <p className="mt-3">{taskObj.Description}</p>
 
-            <div style={{"position": "absolute", "right" : "20px", "top" : "20px"}}>
-                <i class = "feather feather-check-square" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}}></i>
-                <i class = "feather feather-edit" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
-                <i class = "feather feather-trash-2" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
-                
+                <div style={{ "position": "absolute", "right": "20px", "bottom": "20px" }}>
+                <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i>
+                <i class="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}></i>
+
+                </div>
             </div>
-            </div>
-            <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask} taskObj = {taskObj}/>
+            <EditTask modal={modal} toggle={toggle} updateTask={updateTask} taskObj={taskObj}/>
         </div>
     );
 };
