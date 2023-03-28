@@ -14,7 +14,10 @@ const quoteOfTheDay = () => {
   }, []);
 
   return (
+    <div className='quote-container' >
     <p>{quote}</p>
+    </div>
+
   );
 };
 
