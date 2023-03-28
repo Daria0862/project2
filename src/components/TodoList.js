@@ -3,6 +3,7 @@ import { Button } from './button.style';
 import styled from 'styled-components';
 import CreateTask from '../modals/createTask'
 import Card from './card';
+import QuoteOfTheDay from './quoteOfTheDay';
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
@@ -49,7 +50,7 @@ const TodoList = () => {
             let obj = JSON.parse(arr)
             setTaskList(obj)
         }
-    }, {})
+    }, [])
 
     const deleteTask = (index) => {
         let tempList = taskList
@@ -84,7 +85,11 @@ const TodoList = () => {
             <div className='header text-center'>
                 <h3>MotivateMe</h3>
                 <Button onClick={() => setModal(true)}>Create Task</Button>
+                <div className='quote text-center'> 
+                <QuoteOfTheDay/>
+                 </div>
             </div>
+
             <div className='task-container'>
                 {taskList.map((obj, index) => <Card taskObj={obj} index={index} deleteTask={deleteTask} updateListArray={updateListArray} />)}
             </div>
