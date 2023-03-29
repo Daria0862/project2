@@ -1,4 +1,9 @@
 {
+
+  {
+    "scripts": {
+      "start": "node app.js"
+    },
   "name": "project2",
   "version": "0.1.0",
   "private": true,
@@ -38,4 +43,5 @@
       "last 1 safari version"
     ]
   }
+}
 }
